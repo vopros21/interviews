@@ -50,10 +50,10 @@ line1 = ''
 line2 = ''
 line3 = ''
 for i, letter in enumerate(str):
-    if (i + 1) % 3 == 0:
-        line3 += letter
+    if i % 4 == 0:
+        line1 += letter
     elif (i + 1) % 2 == 0:
         line2 += letter
     else:
-        line1 += letter
+        line3 += letter
 print(line1 + line2 + line3)
