@@ -46,14 +46,13 @@ n = 3
 
 # str = input('Input string for work: ')
 # n = int(input('Input number of rows: '))
-line1 = ''
-line2 = ''
-line3 = ''
+lines = ['', ] * n
+print(lines)
 for i, letter in enumerate(str):
     if i % 4 == 0:
-        line1 += letter
+        lines[0] += letter
     elif (i + 1) % 2 == 0:
-        line2 += letter
+        lines[1] += letter
     else:
-        line3 += letter
-print(line1 + line2 + line3)
+        lines[2] += letter
+print(lines[0] + lines[1] + lines[2])
