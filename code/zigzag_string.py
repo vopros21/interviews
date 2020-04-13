@@ -2,7 +2,7 @@
 #
 # Examples:
 # Input:
-# str = "ABCDEFGH"
+# s = "ABCDEFGH"
 # n = 2
 # Output: "ACEGBDFH"
 # Explanation: Let us write input string in Zig-Zag fashion in 2 rows.
@@ -12,8 +12,8 @@
 # in every row. We get "ACEGBDFH"
 #
 # Input:
-s = "SPICEITRECRUITMENT"
-n = 3
+# s = "SPICEITRECRUITMENT"
+# n = 3
 # Output: SEEINPCIRCUTETITRM
 # Explanation: Let us write input string in Zig-Zag fashion in 3 rows.
 # S_______E_______E_______I_______N
@@ -36,10 +36,10 @@ n = 3
 # Example:
 # Input:
 # 2
-# qrrc
-# 3
-# rfkqyuqfjkxy
-# 2
+# s = 'qrrc'
+# n = 3
+# s = 'rfkqyuqfjkxy'
+# n = 2
 # Output:
 # qrcr
 # rkyqjxfqufky
@@ -59,15 +59,18 @@ arr = list(s)
 while len(arr) > 0:
     if len(arr) >= 2 * n - 2:
         string = arr[0: 2 * n - 2]
+
     else:
         string = arr
     for i, let in enumerate(string):
-        if i < n:
+        if i < n and i < len(string):
             lines[i] += let
-        else:
-            lines[2 * n - i] += let
+        elif i < len(string):
+            lines[2 * n - i - 2] += let
     if len(arr) >= 2 * n - 2:
         arr = arr[2 * n - 2:]
+    else:
+        arr = []
 
 for line in lines:
     print(line, end='')
