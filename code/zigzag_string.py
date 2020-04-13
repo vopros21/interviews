@@ -12,7 +12,7 @@
 # in every row. We get "ACEGBDFH"
 #
 # Input:
-str = "SPICEITRECRUITMENT"
+s = "SPICEITRECRUITMENT"
 n = 3
 # Output: SEEINPCIRCUTETITRM
 # Explanation: Let us write input string in Zig-Zag fashion in 3 rows.
@@ -47,12 +47,27 @@ n = 3
 # str = input('Input string for work: ')
 # n = int(input('Input number of rows: '))
 lines = ['', ] * n
-print(lines)
-for i, letter in enumerate(str):
-    if i % 4 == 0:
-        lines[0] += letter
-    elif (i + 1) % 2 == 0:
-        lines[1] += letter
+# for i, letter in enumerate(s):
+#     if i % 4 == 0:
+#         lines[0] += letter
+#     elif (i + 1) % 2 == 0:
+#         lines[1] += letter
+#     else:
+#         lines[2] += letter
+
+arr = list(s)
+while len(arr) > 0:
+    if len(arr) >= 2 * n - 2:
+        string = arr[0: 2 * n - 2]
     else:
-        lines[2] += letter
-print(lines[0] + lines[1] + lines[2])
+        string = arr
+    for i, let in enumerate(string):
+        if i < n:
+            lines[i] += let
+        else:
+            lines[2 * n - i] += let
+    if len(arr) >= 2 * n - 2:
+        arr = arr[2 * n - 2:]
+
+for line in lines:
+    print(line, end='')
