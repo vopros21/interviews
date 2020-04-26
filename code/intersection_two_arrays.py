@@ -43,3 +43,18 @@
 # Testcase 2: 3 4 5 and 6 are the elements in the intersection of two arrays.
 # Testcase 3: Non of the elements are common so the output will be -1.
 # Testcase 4: 10 is the only element which is in the intersection of two arrays.
+
+
+def intersection(array1, array2):
+    result = []
+    if len(array1) > len(array2):
+        array1, array2 = array2, array1
+    for elem in array1:
+        if elem in array2:
+            result.append(elem)
+    return result
+
+
+a = [89, 24, 75, 11, 23]
+b = [89, 2, 4, 11]
+print(len(intersection(b, a)))
