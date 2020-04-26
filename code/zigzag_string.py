@@ -44,16 +44,9 @@
 # qrcr
 # rkyqjxfqufky
 
-# str = input('Input string for work: ')
-# n = int(input('Input number of rows: '))
+s = input('Input string for work: ')
+n = int(input('Input number of rows: '))
 lines = ['', ] * n
-# for i, letter in enumerate(s):
-#     if i % 4 == 0:
-#         lines[0] += letter
-#     elif (i + 1) % 2 == 0:
-#         lines[1] += letter
-#     else:
-#         lines[2] += letter
 
 arr = list(s)
 while len(arr) > 0:

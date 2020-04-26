@@ -1,8 +1,12 @@
-# Given two arrays A and B respectively of size N and M. The task is to print the count of elements in the intersection (or common elements) of the two arrays.
-# For this question, intersection of two arrays can be defined as the set containing distinct common elements between the two arrays.
+# Given two arrays A and B respectively of size N and M. The task is to print
+# the count of elements in the intersection (or common elements) of the two arrays.
+# For this question, intersection of two arrays can be defined as the set containing
+# distinct common elements between the two arrays.
 #
 # Input:
-# The first line of input contains an integer T denoting the number of test cases. The first line of each test case is N and M, N is the size of array A and M is size of array B. The second line of each test case contains N input A[i].
+# The first line of input contains an integer T denoting the number of test cases.
+# The first line of each test case is N and M, N is the size of array A and M is
+# size of array B. The second line of each test case contains N input A[i].
 # The third line of each test case contains M input B[i].
 #
 # Output:
