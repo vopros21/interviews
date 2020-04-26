@@ -46,15 +46,15 @@
 
 
 def intersection(array1, array2):
-    result = []
+    result = set()
     if len(array1) > len(array2):
         array1, array2 = array2, array1
     for elem in array1:
         if elem in array2:
-            result.append(elem)
+            result.add(elem)
     return result
 
 
-a = [89, 24, 75, 11, 23]
-b = [89, 2, 4, 11]
+a = [89, 24, 75, 11, 11, 11, 23]
+b = [8, 2, 4, 12, 10]
 print(len(intersection(b, a)))
