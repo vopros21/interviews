@@ -48,5 +48,13 @@
 # 7 4 5 2 8 6 3 1 9
 
 
-
-# TODO solve it!
+# no = int(input('Input number of TCs: '))
+no = 1
+number = 0
+while number < no:
+    field = []
+    print(f'Input test {number + 1}')
+    for i in range(9):
+        field.append(input().split())
+    print(field)
+    number += 1
