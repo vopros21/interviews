@@ -62,10 +62,10 @@ while number < no:
         flag = False
         for i in range(9):
             for j in range(9):
-                top = i // 3
-                bottom = i // 3 + 3
-                left = j // 3
-                right = j // 3 + 3
+                top = i - i % 3
+                bottom = i - i % 3 + 3
+                left = j - j % 3
+                right = j - j % 3 + 3
                 if field[i][j] == 0:
                     flag = True
                     row = set(range(1, 10))
@@ -78,7 +78,7 @@ while number < no:
                     for k in range(top, bottom):
                         for m in range(left, right):
                             group.discard(field[k][m])
-                    inter = row.intersection(column.union(group))
+                    inter = row.intersection(column.intersection(group))
                     if len(inter) == 1:
                         field[i][j] = inter.pop()
     number += 1
