@@ -32,8 +32,8 @@
 # 0 0 0 0 0 0 0 7 4
 # 0 0 5 2 0 6 3 0 0
 #
-# Output:
-# 3 1 6 5 7 8 4 9 2 5 2 9 1 3 4 7 6 8 4 8 7 6 2 9 5 3 1 2 6 3 4 1 5 9 8 7 9 7 4 8 6 3 1 2 5 8 5 1 7 9 2 6 4 3 1 3 8 9 4 7 2 5 6 6 9 2 3 5 1 8 7 4 7 4 5 2 8 6 3 1 9
+# Output: 3 1 6 5 7 8 4 9 2 5 2 9 1 3 4 7 6 8 4 8 7 6 2 9 5 3 1 2 6 3 4 1 5 9 8 7 9 7 4 8 6 3 1 2 5 8 5 1 7 9 2 6 4 3
+# 1 3 8 9 4 7 2 5 6 6 9 2 3 5 1 8 7 4 7 4 5 2 8 6 3 1 9
 #
 # Explanation:
 # Testcase 1: The solved sudoku is:
@@ -46,15 +46,20 @@
 # 1 3 8 9 4 7 2 5 6
 # 6 9 2 3 5 1 8 7 4
 # 7 4 5 2 8 6 3 1 9
-
+import numpy as np
 
 # no = int(input('Input number of TCs: '))
 no = 1
 number = 0
 while number < no:
-    field = []
+    field = np.array([])
     print(f'Input test {number + 1}')
     for i in range(9):
-        field.append(input().split())
-    print(field)
+        field.put(i, input().split())
+    print(*field)
+    for i in range(9):
+        for j in range(9):
+            if field[i][j] == 0:
+                row = set(field[i])
+                column = set()
     number += 1
