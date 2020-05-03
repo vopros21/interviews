@@ -52,14 +52,35 @@ import numpy as np
 no = 1
 number = 0
 while number < no:
-    field = np.array([])
+    field = []
     print(f'Input test {number + 1}')
     for i in range(9):
-        field.put(i, input().split())
+        field.append(list(map(int, input().split())))
     print(*field)
-    for i in range(9):
-        for j in range(9):
-            if field[i][j] == 0:
-                row = set(field[i])
-                column = set()
+    flag = True
+    while flag:
+        flag = False
+        for i in range(9):
+            for j in range(9):
+                top = i // 3
+                bottom = i // 3 + 3
+                left = j // 3
+                right = j // 3 + 3
+                if field[i][j] == 0:
+                    flag = True
+                    row = set(range(1, 10))
+                    for h in range(9):
+                        row.discard(field[i][h])
+                    column = set(range(1, 10))
+                    for k in range(9):
+                        column.discard(field[k][j])
+                    group = set(range(1, 10))
+                    for k in range(top, bottom):
+                        for m in range(left, right):
+                            group.discard(field[k][m])
+                    inter = row.intersection(column.union(group))
+                    if len(inter) == 1:
+                        field[i][j] = inter.pop()
     number += 1
+    for i in range(9):
+        print(*field[i])
