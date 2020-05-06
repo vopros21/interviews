@@ -46,41 +46,64 @@
 # 1 3 8 9 4 7 2 5 6
 # 6 9 2 3 5 1 8 7 4
 # 7 4 5 2 8 6 3 1 9
+import copy
+
 import numpy as np
 
 # no = int(input('Input number of TCs: '))
 no = 1
 number = 0
+# while number < no:
+#     field = []
+#     print(f'Input test {number + 1}')
+#     for i in range(9):
+#         field.append(list(map(int, input().split())))
+#     print(*field)
+#     flag = True
+#     while flag:
+#         flag = False
+#         for i in range(9):
+#             for j in range(9):
+#                 top = i - i % 3
+#                 bottom = i - i % 3 + 3
+#                 left = j - j % 3
+#                 right = j - j % 3 + 3
+#                 if field[i][j] == 0:
+#                     flag = True
+#                     row = set(range(1, 10))
+#                     for h in range(9):
+#                         row.discard(field[i][h])
+#                     column = set(range(1, 10))
+#                     for k in range(9):
+#                         column.discard(field[k][j])
+#                     group = set(range(1, 10))
+#                     for k in range(top, bottom):
+#                         for m in range(left, right):
+#                             group.discard(field[k][m])
+#                     inter = row.intersection(column.intersection(group))
+#                     if len(inter) == 1:
+#                         field[i][j] = inter.pop()
+#     number += 1
+#     for i in range(9):
+#         print(*field[i])
+
+
+def sudoku(original):
+    current = copy.deepcopy(original)
+    for l in current:
+        for j in l:
+            if j == 0:
+                pass
+    return current
+
+
 while number < no:
     field = []
+    common_line = []
     print(f'Input test {number + 1}')
     for i in range(9):
-        field.append(list(map(int, input().split())))
-    print(*field)
-    flag = True
-    while flag:
-        flag = False
-        for i in range(9):
-            for j in range(9):
-                top = i - i % 3
-                bottom = i - i % 3 + 3
-                left = j - j % 3
-                right = j - j % 3 + 3
-                if field[i][j] == 0:
-                    flag = True
-                    row = set(range(1, 10))
-                    for h in range(9):
-                        row.discard(field[i][h])
-                    column = set(range(1, 10))
-                    for k in range(9):
-                        column.discard(field[k][j])
-                    group = set(range(1, 10))
-                    for k in range(top, bottom):
-                        for m in range(left, right):
-                            group.discard(field[k][m])
-                    inter = row.intersection(column.intersection(group))
-                    if len(inter) == 1:
-                        field[i][j] = inter.pop()
+        line = list(map(int, input().split()))
+        field.append(line)
+        common_line += line
     number += 1
-    for i in range(9):
-        print(*field[i])
+print('End of calculations!')
