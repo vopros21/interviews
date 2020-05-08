@@ -93,7 +93,7 @@ def sudoku(original):
     for l in current:
         for j in l:
             if j == 0:
-                pass
+                numbers = [i in range(1, 10)]
     return current
 
 
