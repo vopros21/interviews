@@ -94,12 +94,18 @@ def sudoku(original):
         for j in range(9):
             if current[i][j] == 0:
                 numbers = set(range(1, 10))
-                row, column, group = groups(current, i, j)
+                row, column, group = groups(current, i, j) # three sets with accessible numbers
     return current
 
 
 def groups(array, x, y):
-    return None, None, None
+    row = set(array[x])
+    column = set()
+    for k in range(9):
+        column.add(array[k][y])
+    top = x - x % 3
+    left = y - y % 3
+    return row, column, None
 
 
 while number < no:
