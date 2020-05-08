@@ -90,11 +90,16 @@ number = 0
 
 def sudoku(original):
     current = copy.deepcopy(original)
-    for l in current:
-        for j in l:
-            if j == 0:
-                numbers = [i in range(1, 10)]
+    for l in range(9):
+        for j in range(9):
+            if current[i][j] == 0:
+                numbers = set(range(1, 10))
+                row, column, group = groups(current, i, j)
     return current
+
+
+def groups(array, x, y):
+    return None, None, None
 
 
 while number < no:
