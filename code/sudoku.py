@@ -88,17 +88,7 @@ number = 0
 #         print(*field[i])
 
 
-def sudoku(original):
-    current = copy.deepcopy(original)
-    for l in range(9):
-        for j in range(9):
-            if current[i][j] == 0:
-                numbers = set(range(1, 10))
-                row, column, group = groups(current, i, j)  # three sets with accessible numbers
-    return current
-
-
-def groups(array, x, y):
+def available_numbers(array, x, y):
     row = set(array[x])
     column = set()
     for k in range(9):
@@ -109,7 +99,27 @@ def groups(array, x, y):
     for ver in range(top, top + 3):
         for hor in range(left, left + 3):
             group.add(array[ver][hor])
-    return row, column, group
+    row.discard(0)
+    column.discard(0)
+    group.discard(0)
+    return intersection(row, column, group)
+
+
+def intersection(set_1, set_2, set_3):
+    result = set(range(1, 10))
+    for el in set_1 + set_2 + set_3:
+        result.discard(el)
+    return result
+
+
+def sudoku(original):
+    current = copy.deepcopy(original)
+    for l in range(9):
+        for j in range(9):
+            if current[i][j] == 0:
+                numbers = set(range(1, 10))
+                numbs = available_numbers(current, i, j)  # three sets with accessible numbers
+    return current
 
 
 while number < no:
