@@ -94,7 +94,7 @@ def sudoku(original):
         for j in range(9):
             if current[i][j] == 0:
                 numbers = set(range(1, 10))
-                row, column, group = groups(current, i, j) # three sets with accessible numbers
+                row, column, group = groups(current, i, j)  # three sets with accessible numbers
     return current
 
 
@@ -105,7 +105,11 @@ def groups(array, x, y):
         column.add(array[k][y])
     top = x - x % 3
     left = y - y % 3
-    return row, column, None
+    group = set()
+    for ver in range(top, top + 3):
+        for hor in range(left, left + 3):
+            group.add(array[ver][hor])
+    return row, column, group
 
 
 while number < no:
