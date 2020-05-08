@@ -122,13 +122,13 @@ def sudoku(original):
     return current
 
 
-while number < no:
-    field = []
-    common_line = []
-    print(f'Input test {number + 1}')
-    for i in range(9):
-        line = list(map(int, input().split()))
-        field.append(line)
-        common_line += line
-    number += 1
-print('End of calculations!')
+# while number < no:
+#     field = []
+#     common_line = []
+#     print(f'Input test {number + 1}')
+#     for i in range(9):
+#         line = list(map(int, input().split()))
+#         field.append(line)
+#         common_line += line
+#     number += 1
+# print('End of calculations!')
