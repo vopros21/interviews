@@ -105,9 +105,9 @@ def available_numbers(array, x, y):
     return intersection(row, column, group)
 
 
-def intersection(set_1, set_2, set_3):
+def intersection(set_1: set, set_2: set, set_3: set) -> set:
     result = set(range(1, 10))
-    for el in set_1 + set_2 + set_3:
+    for el in set_1.union(set_2.union(set_3)):
         result.discard(el)
     return result
 
