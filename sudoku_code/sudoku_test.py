@@ -30,6 +30,8 @@ class SudokuIntersectionsTest(unittest.TestCase):
         self.assertEqual({1, 9}, result)
         result = su.available_numbers(field, 1, 2)
         self.assertEqual({1, 4, 9}, result)
+        result = su.available_numbers(field, 4, 7)
+        self.assertEqual({1, 2, 4}, result)
 
 # class SudokuAvailableNumbersTest(unittest.TestCase):
 #

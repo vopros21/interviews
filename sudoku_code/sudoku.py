@@ -127,6 +127,8 @@ def sudoku(original):
                     for k in numbers:
                         current[i][j] = k
                         current = sudoku(current)
+            elif i == 8 and j == 8:
+                return current
     return current
 
 
