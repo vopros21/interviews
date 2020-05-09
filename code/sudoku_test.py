@@ -28,7 +28,7 @@ class SudokuIntersectionsTest(unittest.TestCase):
         column = 1
         result = su.available_numbers(field, row, column)
         self.assertEqual({1, 9}, result)
-        result = su.available_numbers(field, 2, 1)
+        result = su.available_numbers(field, 1, 2)
         self.assertEqual({1, 4, 9}, result)
 
 # class SudokuAvailableNumbersTest(unittest.TestCase):
