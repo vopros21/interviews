@@ -107,19 +107,22 @@ def available_numbers(array, x, y):
 
 def intersection(set_1: set, set_2: set, set_3: set) -> set:
     result = set(range(1, 10))
-    for el in set_1.union(set_2.union(set_3)):
+    set_1.update(set_2)
+    set_1.update(set_3)
+    # union = set_1.union(set_2.union(set_3))
+    for el in set_1:
         result.discard(el)
     return result
 
 
-def sudoku(original):
-    current = copy.deepcopy(original)
-    for l in range(9):
-        for j in range(9):
-            if current[i][j] == 0:
-                numbers = set(range(1, 10))
-                numbs = available_numbers(current, i, j)  # three sets with accessible numbers
-    return current
+# def sudoku(original):
+#     current = copy.deepcopy(original)
+#     for l in range(9):
+#         for j in range(9):
+#             if current[i][j] == 0:
+#                 numbers = set(range(1, 10))
+#                 numbs = available_numbers(current, i, j)  # three sets with accessible numbers
+#     return current
 
 
 # while number < no:
