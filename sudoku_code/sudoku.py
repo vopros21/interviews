@@ -118,7 +118,8 @@ def sudoku(original):
     current = copy.deepcopy(original)
     for i in range(9):
         for j in range(9):
-            if current[i][j] == 0:
+            cur = current[i][j]
+            if cur == 0:
                 numbers = available_numbers(current, i, j)
                 if len(numbers) == 0:
                     return current
@@ -132,9 +133,9 @@ def sudoku(original):
 while number < no:
     field = []
     common_line = []
-    file = open('data/sudoku_tests.txt', 'r', encoding='UTF-8')
+    file = open('../data/sudoku_tests.txt', 'r', encoding='UTF-8')
     for i in range(9):
-        line = file.readline().split()
+        line = list(map(int, file.readline().split()))
         field.append(line)
         common_line += line
     res = sudoku(field)

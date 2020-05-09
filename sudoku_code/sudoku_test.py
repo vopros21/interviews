@@ -1,5 +1,5 @@
 import unittest
-import code.sudoku as su
+import sudoku_code.sudoku as su
 
 
 class SudokuIntersectionsTest(unittest.TestCase):
