@@ -123,18 +123,22 @@ def sudoku(original):
                 if len(numbers) == 0:
                     return current
                 else:
-                    current[i][j] = numbers.pop()
-                    current = sudoku(current)
+                    for k in numbers:
+                        current[i][j] = k
+                        current = sudoku(current)
     return current
 
 
-# while number < no:
-#     field = []
-#     common_line = []
-#     print(f'Input test {number + 1}')
-#     for i in range(9):
-#         line = list(map(int, input().split()))
-#         field.append(line)
-#         common_line += line
-#     number += 1
-# print('End of calculations!')
+while number < no:
+    field = []
+    common_line = []
+    file = open('data/sudoku_tests.txt', 'r', encoding='UTF-8')
+    for i in range(9):
+        line = file.readline().split()
+        field.append(line)
+        common_line += line
+    res = sudoku(field)
+    for i in range(9):
+        print(*res[i])
+    number += 1
+print('End of calculations!')
