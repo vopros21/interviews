@@ -52,10 +52,10 @@ def intersection(array1, array2):
     for elem in array1:
         if elem in array2:
             result.add(elem)
-    return result if len(result) > 0 else -1
+    return len(result) if len(result) > 0 else -1
 
 
 a = [89, 24, 75, 11, 11, 11, 23]
-b = [8, 2, 4, 12, 10]
+b = [8, 2, 4, 23, 11]
 
-print(len(intersection(b, a)))
+print(intersection(b, a))
