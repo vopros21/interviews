@@ -115,21 +115,20 @@ def intersection(set_1: set, set_2: set, set_3: set) -> set:
 
 
 def sudoku(original):
+    flag = False
     current = copy.deepcopy(original)
     for i in range(9):
         for j in range(9):
             cur = current[i][j]
             if cur == 0:
                 numbers = available_numbers(current, i, j)
-                if len(numbers) == 0:
-                    return current
-                else:
-                    for k in numbers:
-                        current[i][j] = k
-                        current = sudoku(current)
-            elif i == 8 and j == 8:
-                return current
-    return current
+                for k in numbers:
+                    current[i][j] = k
+                    if not flag:
+                        current, flag = sudoku(current)
+            if [i, j] == [8, 8]:
+                flag = True
+    return current, flag
 
 
 while number < no:
@@ -140,7 +139,8 @@ while number < no:
         line = list(map(int, file.readline().split()))
         field.append(line)
         common_line += line
-    res = sudoku(field)
+    res, is_solved = sudoku(field)
+    print(is_solved)
     for i in range(9):
         print(*res[i])
     number += 1
