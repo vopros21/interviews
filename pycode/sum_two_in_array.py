@@ -41,3 +41,4 @@ while number > 0:
             if elem + array[j] == summa:
                 count += 1
     print(f'Number of pairs is {count}')
+print('End of calculations')
