@@ -13,4 +13,4 @@ def is_palindrome(string):
 
 if __name__ == '__main__':
     x = input("Type your number for palindrome checking: ")
-    print(f"Number {x} is a palindrome" if is_palindrom(x) else f"Number {x} is not a palindrome")
+    print(f"Number {x} is a palindrome" if is_palindrome(x) else f"Number {x} is not a palindrome")
