@@ -1,9 +1,10 @@
 # https://leetcode.com/problems/plus-one/
-from typing import List
-
 
 # Runtime: 37ms: beats 44.41%
 # Memory: 13.8MB: beats 94.43%
+
+from typing import List
+
 
 class Solution:
     def plus_one(self, digits: List[int]) -> List[int]:
