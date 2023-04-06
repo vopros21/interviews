@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/can-place-flowers/
 
 # Runtime: 155ms: beats 95.54%
-# # Memory: 14.3MB: beats 94.1%
+# Memory: 14.3MB: beats 94.1%
 
 from typing import List
 
