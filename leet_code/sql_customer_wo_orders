@@ -1,0 +1,8 @@
+# https://leetcode.com/problems/customers-who-never-order/
+
+# Runtime: 863ms: beats 89.63%
+
+# Write your MySQL query statement below
+SELECT c.name as Customers
+FROM   customers as c
+WHERE  c.ID NOT IN (SELECT o.customerID FROM orders as o)
