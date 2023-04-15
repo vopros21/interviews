@@ -1,9 +1,9 @@
 # https://leetcode.com/problems/linked-list-cycle/
-from typing import Optional
-
 
 # Runtime: 58ms: beats 52.65%
 # Memory: 18MB: beats 7.71%
+
+from typing import Optional
 
 
 class ListNode(object):
