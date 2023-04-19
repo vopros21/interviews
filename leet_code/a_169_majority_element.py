@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/majority-element/
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 165ms: beats 67.64%
+# Memory: 15.4MB: beats 98.97%
 
 from typing import List
 
