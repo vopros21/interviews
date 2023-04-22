@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 943ms: beats 89.44%
+# Memory: 25.1MB: beats 29.5%
 from typing import List
 
 
