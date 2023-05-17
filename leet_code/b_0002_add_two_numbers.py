@@ -7,13 +7,14 @@ from typing import Optional
 
 
 class ListNode(object):
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next_node=None):
         self.val = val
-        self.next = next
+        self.next = next_node
 
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def add_two_numbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         result = ListNode(0)
         tmp = result
         prev = None
@@ -40,7 +41,7 @@ if __name__ == '__main__':
     # a = b = ListNode(0)
     a = ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
     b = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
-    c = Solution().addTwoNumbers(a, b)
+    c = Solution().add_two_numbers(a, b)
     while c:
         print(c.val, end='')
         c = c.next
