@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/reverse-bits/
 
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 58ms: beats 5.3%
+# Memory: 16.3MB: beats 19.86%
 
 class Solution:
     def reverse_bits(self, n: int) -> int:
