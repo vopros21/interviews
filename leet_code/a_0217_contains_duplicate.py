@@ -1,20 +1,18 @@
 # https://leetcode.com/problems/contains-duplicate/
+# Runtime: 543ms: beats 79.35%
+# Memory: 31.8MB: beats 28.31%
+
 from typing import List
 
 
-# Runtime: ms: beats %
-# Memory: MB: beats %
-
 class Solution:
     def contains_duplicate(self, nums: List[int]) -> bool:
-        i = 1
-        for n in nums:
-            if n in nums[i:]:
-                return True
-            i += 1
+        set_nums = set(nums)
+        if len(set_nums) != len(nums):
+            return True
         return False
 
 
 if __name__ == '__main__':
-    nums = [1,2,3,1]
+    nums = [2, 2, 1]
     print(Solution().contains_duplicate(nums))
