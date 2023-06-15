@@ -2,8 +2,8 @@
 
 # Definition for singly-linked list.
 
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 65ms: beats 5.43%
+# Memory: 17.8MB: beats 67.28%
 
 
 class ListNode(object):
@@ -13,11 +13,22 @@ class ListNode(object):
 
 
 class Solution(object):
-    def reverse_list(self, list1):
+    def reverse_list(self, head):
         """
-        :type list1: Optional[ListNode]
+        :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        result = None
+        while head is not None:
+            node = head
+            head = node.next
+            if result is None:
+                result = node
+                result.next = None
+            else:
+                node.next = result
+                result = node
+        return result
 
 
 if __name__ == "__main__":
