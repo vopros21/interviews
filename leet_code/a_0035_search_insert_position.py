@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/search-insert-position/
 
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 61ms: beats 73.24%
+# Memory: 17MB: beats 82.41%
 
 from typing import List
 
