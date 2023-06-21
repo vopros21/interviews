@@ -10,16 +10,23 @@ class Solution:
     def search_insert(self, nums: List[int], target: int) -> int:
         left = 0
         right = len(nums) - 1
-        while left < right:
+        middle = 0
+        while left <= right:
+            if target <= nums[left]:
+                return left
+            if target > nums[right]:
+                return right + 1
             middle = (left + right) // 2
             if target == nums[middle]:
                 return middle
             if target > nums[middle]:
-                left = middle
+                left = middle + 1
             else:
-                right = middle
+                right = middle - 1
+        return middle
 
 
 if __name__ == '__main__':
-    numbers = [1, 2, 5, 6]
-    print(Solution().search_insert(nums=numbers, target=3))
+    numbers = [1, 3, 5, 6]
+    for i in range (10):
+        print(i , ": ", Solution().search_insert(nums=numbers, target=i))
