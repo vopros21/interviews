@@ -5,14 +5,12 @@
 
 class Solution:
     def convert_to_title(self, column_number: int) -> str:
-        count = 0
-        index = 0
-        for ch in column_title:
-            if index != 0:
-                count *= 26
-            index += 1
-            count += int(ch, 36) - 9
-        return count
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        result = ""
+        while column_number > 0:
+            result = alphabet[column_number % 26 - 1] + result
+            column_number = column_number // 26
+        return result
 
 
 if __name__ == '__main__':
