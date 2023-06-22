@@ -14,6 +14,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    lines = [1, 2, 26, 27, 28]
-    for l in lines:
-        print(Solution().convert_to_title(l))
+    # lines = [1, 2, 26, 27, 28, 262, 611]
+    for l in range(701):
+        print(l, Solution().convert_to_title(l))
