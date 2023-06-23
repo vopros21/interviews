@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/excel-sheet-column-title/
 
-# Runtime: ms: beats %
-# Memory: MB: beats %
+# Runtime: 50ms: beats 29.10%
+# Memory: 16.3MB: beats 58.62%
 
 class Solution:
     def convert_to_title(self, column_number: int) -> str:
