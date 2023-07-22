@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/happy-number/
 
-# Runtime: 1548ms: beats 23.9%
-# Memory: 13.8MB: beats 93.49%
+# Runtime: 50ms: beats 61.83%
+# Memory: 15.99MB: beats 99.95%
 
 class Solution:
     def isHappy(self, n: int) -> bool:
@@ -10,10 +10,11 @@ class Solution:
         while n >= 1:
             prev_set.add(n)
             n = Solution().square_sum(n)
-            if n in prev_set:
-                return flag
             if n == 1:
                 flag = True
+            if n in prev_set:
+                return flag
+
         return flag
 
     def square_sum(self, n: int):
@@ -25,5 +26,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    number = 2
+    number = 1
     print(Solution().isHappy(number))
