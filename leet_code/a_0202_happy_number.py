@@ -5,8 +5,25 @@
 
 class Solution:
     def isHappy(self, n: int) -> bool:
-        pass
+        prev_set = set()
+        flag = False
+        while n >= 1:
+            prev_set.add(n)
+            n = Solution().square_sum(n)
+            if n in prev_set:
+                return flag
+            if n == 1:
+                flag = True
+        return flag
+
+    def square_sum(self, n: int):
+        summ = 0
+        while n > 0:
+            summ += (n % 10) ** 2
+            n //= 10
+        return summ
 
 
 if __name__ == '__main__':
-    number = 19
+    number = 2
+    print(Solution().isHappy(number))
