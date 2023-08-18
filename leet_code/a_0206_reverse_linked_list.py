@@ -5,11 +5,11 @@
 # Runtime: 65ms: beats 5.43%
 # Memory: 17.8MB: beats 67.28%
 
-
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from ListNode import ListNode
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 
 
 class Solution(object):
