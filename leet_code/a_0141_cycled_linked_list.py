@@ -4,16 +4,11 @@
 # Memory: 18MB: beats 7.71%
 
 from typing import Optional
-
-
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from ListNode import ListNode
 
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def has_cycle(self, head: Optional[ListNode]) -> bool:
         if not head:
             return False
         s = set()
@@ -36,4 +31,4 @@ if __name__ == '__main__':
     # n.next = l
     # l.next = m
     list_a = k
-    print(Solution().hasCycle(list_a))
+    print(Solution().has_cycle(list_a))
