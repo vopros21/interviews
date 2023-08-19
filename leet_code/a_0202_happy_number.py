@@ -4,7 +4,7 @@
 # Memory: 15.99MB: beats 99.95%
 
 class Solution:
-    def isHappy(self, n: int) -> bool:
+    def is_happy(self, n: int) -> bool:
         prev_set = set()
         flag = False
         while n >= 1:
@@ -27,4 +27,4 @@ class Solution:
 
 if __name__ == '__main__':
     number = 1
-    print(Solution().isHappy(number))
+    print(Solution().is_happy(number))
